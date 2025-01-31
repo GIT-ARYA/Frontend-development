@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            border: 10px solid teal;
+            border-radius: 20px;
+            background-color: aquamarine;
+            display: grid;
+            grid-template-rows: auto auto auto auto;/*helps to increase height of the rows*/
+            grid-template-columns:20% auto 50%;/*No. of columns in the grid*/
+            grid-template:auto auto auto auto / auto auto auto;/*First set rows then columns*/
+            grid-row-gap:0px;/*sets gap between rows*/
+            grid-column-gap: 0px;/*sets gap between columns*/
+        }
+        .item{
+            border: 3px solid darkgreen ;
+            padding: 20px;
+        }
+        #item3{
+            /* grid-row-start:2;
+            grid-row-end: span 1; */
+            grid-row: 2 / span 1;/*start / end*/
+
+        }
+        #item7{
+            /* grid-column-start: 2;
+            grid-column-end: span 2; */
+            grid-column: 2 / span 2;/*start / end*/
+        }
+        #header{
+            text-align: center;
+            grid-column:1/span 3;
+            height: 20px;
+        }
+        #caption{
+            grid-row: 2;
+            grid-column: 1 / span 3;
+            height: 100px;
+        }
+        #paragraph{
+            grid-column:  1 /span 2;
+            height: 100px;
+        }
+        #footer{
+            grid-column: 1 / span 3;
+            height: 100px;
+        }
+        .im{
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class = "item" id="header">Famous Tourism Places of India</div>
+        <div class = "item" id="caption">Img</div>
+        <div class = "item" style="height: 100px;">Img</div>
+        <div class = "item" style="height: 100px;">Img</div>
+        <div class = "item" style="height: 100px;">Img</div>
+        <div class = "item" id="paragraph">paragraph</div>
+        <div class = "item" id="icaption">img</div>
+        <div class = "item" id="footer">footer</div>
+    </div>
+</body>
+</html>
