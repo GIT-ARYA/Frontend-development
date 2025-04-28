@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="output.css">
+    <script>
+        document.write("<h1 class = 'text-2xl text-blue-600 font-bold underline' >Control Statements</h1><br>");
+        document.write("<h1 class = 'text-xl text-blue-600 font-bold' >If-Else</h1>");
+        var CGPA = 8.1;
+        if (CGPA > 9) {
+            document.write("Internship in Microsoft");
+        }
+        else if (CGPA > 8 && CGPA <= 9) {
+            document.write("Internship in TCS");
+        }
+        else if (CGPA > 7 && CGPA <= 8) {
+            document.write("Internship in Infosys");
+        }
+        else {
+            document.write("Inhouse Internship");
+        }
+        document.write("<br><br>");
+        document.write("<h1 class = 'text-xl text-blue-600 font-bold' >switch-case</h1>");
+
+        var a = 1;
+        switch(a) {
+            case 1:
+                document.write("Case 1 Matched");
+                break;
+            case 2:
+                document.write("Case 2 Matched");
+                break;
+            case 3:
+                document.write("Case 3 Matched");
+                break;
+            default:
+                document.write("No Case Matched");
+        }
+        document.write("<br><br>");
+        document.write("<h1 class = 'text-xl text-blue-600 font-bold' >Calculator</h1>");
+        var num1 = 10;
+        var num2 = 20;
+        var operator = "/";
+        document.write("Number 1 is: " + num1 + "<br>");
+        document.write("Number 2 is: " + num2 + "<br>");
+        switch(operator) {
+            case "+":
+                document.write("Addition is: " + (num1 + num2));
+                break;
+            case "-":
+                document.write("Subtraction is: " + (num1 - num2));
+                break;
+            case "*":
+                document.write("Multiplication is: " + (num1 * num2));
+                break;
+            case "/":
+                document.write("Division is: " + (num1 / num2));
+                break;
+            case "%":
+                document.write("Modulus is: " + (num1 % num2));
+                break;
+            case "**":
+                document.write("Exponentiation is: " + (num1 ** num2));
+                break;
+            default:
+                document.write("Invalid Operator");
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

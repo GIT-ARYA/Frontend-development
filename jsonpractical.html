@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="output.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="h-64 w-64 bg-amber-500" id="div1" ></div>
+    <script src="jquery-3.7.1.js"></script>
+    <script>
+        $(document).ready(function() {
+            const students = '{"name": "John", "age": 20, "address": {"city": "New York", "zip": "10001"}}';
+            const parsedStudents = JSON.parse(students);
+            
+            console.log(parsedStudents);
+            console.log(parsedStudents.name);
+            console.log(parsedStudents.age);
+            console.log(parsedStudents.address.city);
+            console.log(parsedStudents.address.zip);
+            var outputstyle = '<p>Name is :' + parsedStudents.name + '</p>';
+            let laptop = {
+                name : "Dell",
+                model : "Inspiron"
+            }
+            const laptopString = JSON.stringify(laptop);
+            console.log(laptopString);
+
+            let list = '{"name" : "Arya", "age" : 25, "address" : {"city" : "Delhi", "zip" : "110001"}},{"name":"amit", "age": 30, "address": {"city": "Mumbai", "zip": "400001"}}';
+            const parsedList = JSON.parse(list);
+            console.log(parsedList);
+            for(let i = 0; i < parsedList.length; i++){
+                $("#div1").append(parsedList[i].name);
+                $("#div1").append(parsedList[i].age);
+                $("#div1").append(parsedList[i].address.city);
+                $("#div1").append(parsedList[i].address.zip);
+            }
+
+            $("#div1").text(parsedStudents.name + " " + parsedStudents.age + " " + parsedStudents.address.city + " " + parsedStudents.address.zip);
+            $("#div1").append(outputstyle);
+        });
+    </script>
+</body>
+</html>

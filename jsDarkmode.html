@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="output.css">
+    <script>
+        //Node creation and manipulation
+        // document.createElement("h1");//creates a new html element with specified tag name
+        // document.createTextNode("Hello World");//creates a new text node with specified text
+        // parentNode.appendChild(node);//appends a node as the last child of a node
+        // parentNode.removeChild(node);//removes a child node from a parent node
+        // parentNode.replaceChild(newNode, oldNode);//replaces a child node with a new node
+    </script>
+</head>
+<body>
+    <p id = "p1" class ="para">Para 1</p>
+    <p id = "p2" class ="para">Para 2</p>
+    <p id = "p3" class ="para">Para 3</p>
+    <p id = "p4" class ="para">Para 4</p>
+    <button class = " border-2 broder-black bg-red-300 ml-4 p-4 rounded-xl hover:bg-amber-500" onclick="txtchnge()">Change Text</button>
+    <button class = " border-2 broder-black bg-red-300 ml-4 p-4 rounded-xl hover:bg-amber-500" onclick="clsmani()">Change classes</button>
+    <button class = " border-2 broder-black bg-red-300 ml-4 p-4 rounded-xl hover:bg-amber-500" onclick="tagchange()">Change tags</button>
+    <button class = " border-2 broder-black bg-red-300 ml-4 p-4 rounded-xl hover:bg-amber-500" onclick="changeStyle()">Change Style</button>
+    <button class = " border-2 broder-black bg-red-300 ml-4 p-4 rounded-xl hover:bg-amber-500" onclick="changeStyle1()">Change Toggle Style</button>
+    <button class = " border-2 broder-black bg-red-300 ml-4 p-4 rounded-xl hover:bg-amber-500" onclick="darkmode()">Dark Mode</button>
+    <button class = " border-2 broder-black bg-red-300 ml-4 p-4 rounded-xl hover:bg-amber-500" onclick="clsadd()">Add Classes</button>
+    <button class = " border-2 broder-black bg-red-300 ml-4 p-4 rounded-xl hover:bg-amber-500" onclick="clsremove()">Remove Classes</button>
+    <button class = " border-2 broder-black bg-red-300 ml-4 p-4 rounded-xl hover:bg-amber-500" onclick="eventlistener()">Event Listener</button>
+    <button class = " border-2 broder-black bg-red-300 ml-4 p-4 rounded-xl hover:bg-amber-500" onclick="removeeventlistener()">Remove Event Listener</button>
+    <br>
+    <div id="pardiv" onclick="divclicker()" class="w-64 h-64 bg-amber-300 m-4 p-6 flex items-center justify-center">
+        <button id="childbt" onclick="btclicker()" class = " border-2 broder-black bg-red-300 p-4 rounded-xl hover:bg-amber-500">BUTTON</button>
+    </div>
+    <script>
+        document.getElementById("pardiv").addEventListener("click", function() {
+            alert("Div clicked!");
+        });
+        document.getElementById("childbt").addEventListener("click", function(event) {
+            event.stopPropagation(); // Prevent the click event from bubbling up to the parent div
+            alert("Button clicked!");
+        });
+    // let para = document.createElement("p");
+    //     para.textContent = "This is a paragraph";
+    //     document.body.appendChild(para);
+    //     let node = document.createTextNode("This is a text node");
+    //     document.body.appendChild(node);
+    //     let div = document.createElement("div");
+    //     div.classList.add("w-64", "h-64", "bg-amber-300","m-4","p-6");
+    //     document.body.appendChild(div);
+    //     div.appendChild(para);
+    //     div.removeChild(para);
+        //Document.getElementById("id");//returns an element object representing the element whose id property matches the specified string
+        //Document.getElementsByClassName("class");//returns an array-like object of all child elements which have all of the given class names
+        //Dogcument.getElementsByTagName("tag");//returns an array-like object of all child elements which have all of the given tag names
+        //Document.querySelector("selector");//returns the first element within the document that matches the specified selector, or group of selectors
+        //Document.querySelectorAll("selector");//returns a static (not live) NodeList representing a list of the document's elements that match the specified group of selectors
+        function txtchnge(){
+            let elt = document.getElementById("p2");
+            elt.innerHTML = "INT219";
+        }
+        function clsmani(){
+            let cl = document.getElementsByClassName("para");
+            for (let i = 0; i < cl.length; i++) {
+                cl[i].classList.add("font-bold","ml-4");
+            }
+        }
+        function tagchange(){
+            let elt = document.getElementsByTagName("p");
+            for (let i = 0; i < elt.length; i++) {
+                elt[i].innerHTML = "INT219";
+            }
+        }
+        let elt = document.querySelectorAll(".para");
+        for (let i = 0 ; i < elt.length ; i++){
+            elt[i].innerHTML = "para Class";
+        }
+    //TO CHANGE THE STYLES OF THE ELEMENTS
+        //element.style.property = "value";(adds a style property to an element)
+        //element.classlist.add("class");(adds a class to an element)
+        //element.classlist.remove("class");(removes a class from an element)
+        //element.classlist.toggle("class");(toggles between adding and removing a class from an element)
+        //element.classlist.contains("class");(returns a boolean value indicating whether an element has the specified class name)
+        function changeStyle(){
+        let elt1 = document.getElementById("p4");
+        elt1.style.textAlign = "center";
+        elt1.style.fontStyle = "italic";
+        }
+        function changeStyle1(){
+            let elt1 = document.getElementById("p4");
+            elt1.classList.toggle("text-4xl");
+            elt1.classList.toggle("text-blue-600");
+            elt1.classList.toggle("font-bold");
+            elt1.classList.toggle("bg-green-200");
+        }
+        function darkmode(){
+            let element = document.body;
+            element.classList.toggle("bg-gray-400");
+            element.classList.toggle("text-white");
+        }
+        function clsadd(){
+            let elt = document.getElementById("p1");
+            elt.classList.add("text-4xl","text-blue-600","font-bold","bg-green-200");
+        }
+        function clsremove(){
+            let elt = document.getElementById("p1");
+            elt.classList.remove("text-4xl","text-blue-600","font-bold","bg-green-200");
+        }
+        //element.addeventListener("event", function(){})//adds an event listener to an element
+        //element.removeEventListener("event", function(){})//removes an event listener from an element
+        function eventlistener(){
+            let elt = document.getElementById("p1");
+            elt.addEventListener("click", alert("Hello World"));
+        }
+        function removeeventlistener(){
+            let elt = document.getElementById("p1");
+            elt.removeEventListener("click", alert("Hello World"));
+        }
+        
+
+    </script>
+    </body>
+</html>

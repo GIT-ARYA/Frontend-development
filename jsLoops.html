@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="output.css">
+    <script>
+        document.write("<h1 class = 'text-2xl text-blue-600 font-bold underline' >Loops</h1><br>");
+        document.write("<h1 class = 'text-xl text-blue-600 font-bold' >For Loop</h1>");
+        for (var i = 0; i < 5; i++) {
+            document.write("Value of i is: " + i + "<br>");
+        }
+        document.write("<br><br>");
+        document.write("<h1 class = 'text-xl text-blue-600 font-bold' >While Loop</h1>");
+        var j = 0;
+        while (j <= 10) {
+            document.write("Value of j is: " + j + "<br>");
+            j++;
+        }
+        document.write("<br><br>");
+        document.write("<h1 class = 'text-xl text-blue-600 font-bold' >Do-While Loop</h1>");
+        var k = 0;
+        do {
+            document.write("Value of k is: " + k + "<br>");
+            k++;
+        } while (k <= 7);
+        document.write("<br><br>");
+        document.write("<h1 class = 'text-xl text-blue-600 font-bold' >Break and Continue Statements</h1>");
+        for (var l = 0; l < 10; l++) {
+            if (l == 5) {
+                break;
+            }
+            document.write("Value of l is: " + l + "<br>");
+        }
+        document.write("breaked at 5");
+        document.write("<br><br>");
+        for (var m = 0; m < 10; m++) {
+            if (m == 5) {
+                continue;
+            }
+            document.write("Value of m is: " + m + "<br>");
+        }
+        document.write("skipped 5");
+       
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

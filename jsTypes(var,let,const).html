@@ -1,0 +1,30 @@
+<!--
+difference between var, let and const
+var: var is a keyword used to declare a variable in javascript. It is function scoped. It means that the variable declared using var is available throughout the function in which it is declared. If the variable is declared outside the function, it is available globally. It can be redeclared and reassigned.Hoisting is done in case of var.
+let: let is a keyword used to declare a variable in javascript. It is block scoped. It means that the variable declared using let is available only within the block in which it is declared. It can be reassigned but not redeclared.Hoisiting is not done in case of let.
+const: const is a keyword used to declare a variable in javascript. It is block scoped. It means that the variable declared using const is available only within the block in which it is declared. It cannot be reassigned or redeclared. It is used to declare constants in javascript.Hoisiting is not done in case of const.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="output.css">
+    <script>
+        var section = "K23ND";
+        var rollno = 4;
+        let boolval = true;
+        console.log(section);
+        console.log(rollno);
+        console.log(boolval);
+        console.log(typeof section);
+        console.log(typeof rollno);
+        console.log(typeof boolval);
+        document.write("rollno is " + rollno);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

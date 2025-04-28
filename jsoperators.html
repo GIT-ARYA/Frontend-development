@@ -1,0 +1,111 @@
+<!-- 
+ arithmetic{
+    Remainder (%)
+    Increment  (++)
+    Decrement(--)
+    Unary negation(-)
+    Unary plus(+)
+    Exponentiation(**)
+ }
+assignment{
+    assignment(=)
+    addition assignment(+=)
+    subtraction assignment(-=)
+    multiplication assignment(*=)
+    division assignment(/=)
+    remainder assignment(%=)
+    exponentiation assignment(**=)
+    left shift assignment(<<=)
+    right shift assignment(>>=)
+    unsigned right shift assignment(>>>=)
+    bitwise AND assignment(&=)
+    bitwise XOR assignment(^=)
+    bitwise OR assignment(|=)
+}
+comparison{
+    equal to(==) returns true if the operands are equal
+    not equal to(!=) returns true if the operands are not equal
+    greater than(>) returns true if the operand is greater than the other
+    less than(<) returns true if the operand is less than the other
+    greater than or equal to(>=) returns true if the operands are equal or greater than the other
+    less than or equal to(<=) returns true if the operands are equal or greater than the other
+    strict equal to(===) returns true if the operands are equal and of the same type
+    strict not equal to(!==) returns true if the operands are equal but of different type
+}
+logical{
+    logical AND(&&) returns true if both operands are true
+    logical OR(||) returns true if one of the operands is true
+    logical NOT(!) returns true if the operand is false
+}
+bitwise{
+    bitwise AND(&) returns a one in each bit position if both operands have a one in that position
+    bitwise OR(|) returns a one in each bit position if one of the operands has a one in that position
+    bitwise XOR(^) returns a one in each bit position if only one of the operands has a one in that position
+    bitwise NOT(~) inverts the bits
+    left shift(<<) shifts the bits to the left
+    sign-propagating right shift(>>) shifts the bits to the right
+    zero-fill right shift(>>>) shifts the bits to the right and fills the left bits with zeros
+}
+string{
+    concatenation(+)
+    concatenation assignment(+=)
+}
+conditional or ternary{
+    condition? expr1:expr2 returns expr1 if the condition is true, otherwise expr2
+} -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel = "stylesheet" href ="output.css">
+    <!-- <script src="jsonly.js">
+    </script> -->
+    <script>
+        document.write('<h1 class = "text-2xl text-blue-600 font-bold" >Arithmetic Operators</h1>');
+        var a = 10;
+        var b = ++a;
+        document.write("The value of a is: " + a +"<br>");
+        document.write("The value of b is: " + b);
+        document.write('<h1 class = "text-2xl text-blue-600 font-bold" >Comparison Operators</h1>');
+        var x =3;
+        var y = 5;
+        document.write("x == y is " + (x == y) + "<br>");
+        document.write("x != y is " + (x != y) + "<br>");
+        document.write("x > y is " + (x > y) + "<br>");
+        document.write("x < y is " + (x < y) + "<br>");
+        document.write("x >= y is " + (x >= y) + "<br>");
+        document.write("x <= y is " + (x <= y) + "<br>");
+        document.write("x === y is " + (x === y) + "<br>");
+        document.write("x !== y is " + (x !== y) + "<br>");
+        document.write('<h1 class = "text-2xl text-blue-600 font-bold" >Logical Operators</h1>');
+        var p = true;
+        var q = false;
+        document.write("p && q is " + (p && q) + "<br>");
+        document.write("p || q is " + (p || q) + "<br>");
+        document.write("!p is " + (!p) + "<br>");
+        document.write('<h1 class = "text-2xl text-blue-600 font-bold" >Bitwise Operators</h1>');
+        var r = 2;
+        var s = 3;
+        document.write("r & s is " + (r & s) + "<br>");
+        document.write("r | s is " + (r | s) + "<br>");
+        document.write("r ^ s is " + (r ^ s) + "<br>");
+        document.write("~r is " + (~r) + "<br>");
+        document.write("r << s is " + (r << s) + "<br>");
+        document.write("r >> s is " + (r >> s) + "<br>");
+        document.write("r >>> s is " + (r >>> s) + "<br>");
+        document.write('<h1 class = "text-2xl text-blue-600 font-bold" >String Operators</h1>');
+        var t = "Hello";
+        var u = "World";
+        document.write("t + u is " + (t + u) + "<br>");
+        document.write('<h1 class = "text-2xl text-blue-600 font-bold" >Conditional Operators</h1>');
+        var v = 10;
+        var w = (v == 10) ? "Equal" : "Not Equal";
+        document.write("w value is: " + w);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

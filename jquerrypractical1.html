@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="output.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div1" class="flex justify-center items-center w-32 h-32 bg-purple-400 divclass relative">
+        <h1 class="text-2xl" >DIV1</h1>
+        <p>This is a div</p>
+    </div>
+    <button class="bg-green-500 text-white rounded-md p-2 border-2 border-black" id="btnset" >Set value</button>
+    <button class="bg-green-500 text-white rounded-md p-2 border-2 border-black" id="append" >Append</button>
+    <button class="bg-green-500 text-white rounded-md p-2 border-2 border-black" id="prepend" >Prepend</button>
+    <button class="bg-green-500 text-white rounded-md p-2 border-2 border-black" id="after" >After</button>
+    <button class="bg-green-500 text-white rounded-md p-2 border-2 border-black" id="before" >Before</button>
+    <button class="bg-green-500 text-white rounded-md p-2 border-2 border-black" id="bt11" >Animate</button>
+    <button class="bg-green-500 text-white rounded-md p-2 border-2 border-black" id="bt12" >Stop</button>
+    <button class="bg-green-500 text-white rounded-md p-2 border-2 border-black" id="bt13" >Method chain</button>
+    <div id="div2" class="flex justify-center items-center w-32 h-32 bg-amber-400 ">
+        DIV 2
+    </div>
+    <ul class="list-disc m-4" >
+        <li>List 1</li>
+        <li>List 2</li>
+        <li>List 3</li>
+        <li>List 4</li>
+        <li>List 5</li>
+        <li>List 6</li>
+        <li>List 7</li>
+    </ul>
+    <form action="">
+        <input type="text" class="border-2 border-black rounded-md bg-white p-2" id="input1">
+        <input type="text" class="border-2 border-black rounded-md bg-white p-2" id="input2">
+        <select name="" id="select1" class="border-2 border-black rounded-md bg-white p-2">
+            Choose an option:
+            <option value="Punjab">Punjab</option>
+            <option value="Haryana">Haryana</option>
+            <option value="Jharkhand">Jharkhand</option>
+            <option value="Himachal">Himachal</option>
+        </select>
+    </form>
+    <img src="photo-1434394354979-a235cd36269d.avif" alt="Image" class="w-32 h-32 hidden">
+    <button class="bg-green-500 text-white rounded-md p-2 border-2 border-black" id="bt1" >Show image</button>
+    <button class="bg-green-500 text-white rounded-md p-2 border-2 border-black" id="bt2" >Hide image</button>
+    <button class="bg-green-500 text-white rounded-md p-2 border-2 border-black" id="bt3" >Toggle image</button>
+    <button class="bg-green-500 text-white rounded-md p-2 border-2 border-black" id="bt4" >Fade in</button>
+    <button class="bg-green-500 text-white rounded-md p-2 border-2 border-black" id="bt5" >Fade out</button>
+    <button class="bg-green-500 text-white rounded-md p-2 border-2 border-black" id="bt6" >Fade Toggle</button>
+    <button class="bg-green-500 text-white rounded-md p-2 border-2 border-black" id="bt7" >FadeTo</button>
+    <button class="bg-green-500 text-white rounded-md p-2 border-2 border-black" id="bt8" >Slide UP</button>
+    <button class="bg-green-500 text-white rounded-md p-2 border-2 border-black" id="bt9" >Slide Down</button>
+    <button class="bg-green-500 text-white rounded-md p-2 border-2 border-black" id="bt10" >Slide Toggle</button>
+    <button class="bg-green-500 text-white rounded-md p-2 border-2 border-black" id="bt14" >Empty</button>
+    <button class="bg-green-500 text-white rounded-md p-2 border-2 border-black" id="bt15" >Remove</button>
+    
+
+    <script src="jquery-3.7.1.js"></script>
+    <script>
+        $(document).ready(function(){
+            var a = $("#div1").html();
+            $("#bt9").click(function(){
+                $("img").slideDown(2000);
+            });
+            $("#bt11").click(function(){
+                $("#div1").animate({left: '250px', opacity: '0.5', fontSize:'50px', width: '300px'}, 2000);
+            });
+            $("#bt12").click(function(){
+                $("#div1").stop(true);
+            });
+            $("#bt13").click(function(){
+                $("#div1").animate({left: '250px', opacity: '0.5', fontSize:'50px', width: '300px'}, 2000).animate({left: '0px', opacity: '1', fontSize:'20px', width: '100px'}, 2000).slideUp(2000).slideDown(2000);
+            });
+
+            $("#bt8").click(function(){
+                $("img").slideUp(2000);
+            });
+            $("#bt10").click(function(){
+                $("img").slideToggle(2000);
+            });
+            $("#bt14").click(function(){
+                $("#div1").empty();
+            });
+            $("#bt15").click(function(){
+                $("#div1").remove();
+            });
+
+
+            $("#div2").html(a);
+            $(".divclass").css("color","blue");
+            $("li:odd").css("border","2px solid gold");
+            $("#div1").click(function(){
+                $("#div1").css("background-color","red");
+            });
+            $("#div1").mouseenter(function(){
+                $("#div1").css("background-color","green");
+            });
+            $("#div1").mouseleave(function(){
+                $("#div1").css("background-color","pink");
+            });
+            $("#div1").dblclick(function(){
+                $("#div1").css("background-color","yellow");
+            });
+            $("#div1").contextmenu(function(){
+                $("#div1").css("background-color","black");
+            });
+            $("#input1").keydown(function(){
+                $(this).css("background-color","orange");
+            });
+            
+            $("#input2").focus(function(){
+                $(this).css("background-color","blue");
+            });
+            $("#input2,#input1").blur(function(){
+                $(this).css("background-color","white");
+            });
+            $("#input1,#input2").select(function(){
+                $(this).css("background-color","green");
+            });
+            $("#select1").change(function(){
+                $(this).css({"background-color":"red", "color":"white"});
+                var a = $(this).val();
+                $("#div1").html(a);
+            });
+            $("#bt1").click(function(){
+                $("img").show(2000);
+            });
+            $("#bt2").click(function(){
+                $("img").hide(2000);
+            });
+            $("#bt3").click(function(){
+                $("img").toggle(2000);
+            });
+            $("#bt4").click(function(){
+                $("img").fadeIn(2000);
+            });
+            $("#bt5").click(function(){
+                $("img").fadeOut(2000);
+            });
+            $("#bt6").click(function(){
+                $("img").fadeToggle(2000);
+            });
+            $("#bt7").click(function(){
+                $("img").fadeTo(2000,0.5);
+            });
+            $("#btnset").click(function(){
+                $("#div1 h1").text("Hello World");
+                $("#div1").attr("class","bg-red-500 text-white rounded-md p-2 border-2 border-black");
+                $("#input1").val("Arya");
+            });
+            $("#append").click(function(){
+                $("#div1").append("<p>Append</p>");
+            });
+            $("#prepend").click(function(){
+                $("#div1").prepend("<p>Prepend</p>");
+            });
+            $("#after").click(function(){
+                $("#div1").after("<p>After</p>");
+            });
+            $("#before").click(function(){
+                $("#div1").before("<p>Before</p>");
+            });
+
+
+            var b = $("#div1").html();
+            var c = $("#div1").text();
+            console.log(b);
+            console.log(c);
+
+        });
+        /*Jquerry selectors
+        class selectors
+        id selectors
+        universal selectors
+        $("*") - universal selector
+        $("div") - selects all divs
+        $("div#div1") - selects div with id div1
+        $("div.class") - selects div with class class
+        $("div.class1.class2") - selects div with class class1 and class2
+        $("div.class1, div.class2") - selects div with class class1 or class2
+        $("div.class1.class2, div.class3") - selects div with class class1 and class2 or class3
+
+        Jqerry house evenets
+        .click() - click event
+        .dblclick() - double click event
+        .mouseenter() - mouse enter event
+        .mouseleave() - mouse leave event
+        .mouseover() - mouse over event
+        .mouseout() - mouse out event
+        .mousedown() - mouse down event
+        .mouseup() - mouse up event
+        .mousemove() - mouse move event
+        .hover() - hover event
+        .focus() - focus event
+        .blur() - blur event
+        .change() - change event
+        .select() - select event
+        .submit() - submit event
+        .keydown() - key down event
+        .keyup() - key up event
+        .keypress() - key press event
+        .resize() - resize event
+        .scroll() - scroll event
+        .load() - load event
+        .unload() - unload event
+        .ready() - ready event
+        .resize() - resize event
+        .scroll() - scroll event
+        .unload() - unload event
+        .ready() - ready event
+        .resize() - resize event
+        .scroll() - scroll event
+
+        Jqerry GET methods
+        .get() - get method
+        .post() - post method
+        .ajax() - ajax method
+        .load() - load method
+        .getJSON() - get JSON method
+        .getScript() - get script method
+        .getJSONP() - get JSONP method
+
+        .append() - append method
+        .prepend() - prepend method
+        .after() - after method
+
+        .animate() - animate method
+        .stop() - stop method
+        .empty() - empty method
+        .remove() - remove method
+        */
+    </script>
+</body>
+</html>

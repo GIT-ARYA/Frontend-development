@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="output.css">
+</head>
+<body class="flex bg-purple-400 justify-center items-center">
+    <div class="flex justify-center items-center flex-col bg-white h-64 w-84 flex-wrap">
+        <span class=" text-purple-400 font-stretch-extra-condensed font-extrabold text-4xl">Coundown Timer</span><br>
+        <input type="text" id="input1" class="border-2 border-black rounded-md bg-white p-2 " placeholder="Enter time in seconds"><br>
+        <button id="start" onclick="start()" class="bg-purple-500 text-white rounded-md p-2">Start Countdown</button><br>
+        <div id="countdown" class="text-3xl font-bold text-center mt-4"></div><br>
+        <div id="message" class="text-red-500 font-bold text-center mt-4"></div><br>
+    </div>
+
+
+    <script src="jquery-3.7.1.js"></script>
+    <script>
+        function start() {
+            var time = parseInt(document.getElementById("input1").value);
+            if (isNaN(time) || time <= 0) {
+                alert("Please enter a valid number of seconds.");
+                return;
+            }
+            var countdownElement = document.getElementById("countdown");
+            var messageElement = document.getElementById("message");
+            countdownElement.innerHTML = time;
+            messageElement.innerHTML = "";
+            var interval = setInterval(function() {
+                time--;
+                countdownElement.innerHTML = time;
+                if (time <= 0) {
+                    clearInterval(interval);
+                }
+            }, 1000);
+        }
+    </script>
+</body>
+</html>

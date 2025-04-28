@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="output.css">
+    <script>
+        document.write("<h1 class = 'text-2xl text-blue-600 font-bold underline' >Popup Boxes</h1><br>");
+        document.write("<h1 class = 'text-xl text-blue-600 font-bold' >Alert Box</h1>");
+        alert("This is an alert box");
+        document.write("Alerted");
+        document.write("<br><br>");
+        document.write("<h1 class = 'text-xl text-blue-600 font-bold' >Confirm Box</h1>");
+        var result = confirm("Do you want to confirm?");
+        document.write("The result is: " + result);
+        document.write("<br><br>");
+        document.write("<h1 class = 'text-xl text-blue-600 font-bold' >Prompt Box</h1>");
+        var name = prompt("Enter your name: ");
+        document.write("Your name is: " + name);
+        var num1 = parseInt(prompt("Enter number 1: "));//By default takes values as String
+        var num2 = parseInt(prompt("Enter number 2: "));
+        alert("The sum is: " + (num1 + num2));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
